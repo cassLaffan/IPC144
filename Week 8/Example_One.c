@@ -6,7 +6,7 @@
 
 // This, ladies and gentlement, is a function.
 // A function follows the general format of:
-// [return type] [functio name](any params, seperated by commas){all logic contained in curly brackets}
+// [return type] [function name](any params, seperated by commas){all logic contained in curly brackets}
 
 // Here, we have NO return type, I.E. void. That means the function
 // Doesn't return anything at all. It takes one argument, an integer!
