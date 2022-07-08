@@ -52,7 +52,7 @@ int main() {
     // This puts the civic on the stack. Generally, we will
     // want it on the heap, which is bigger and lasts for the 
     // whole program.
-    // struct Car myCivic = {"Civic\0", "Blue\0", 15000.00, 4};
+    //struct Car myCivic = {"Civic\0", "Blue\0", 15000.00, 4};
 
     struct Car* myCar = createCar("Civic\0", "Blue\0", 15000.00, 4);
 
