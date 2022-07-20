@@ -3,7 +3,8 @@
 int findStringLength(char* aString){
     int ind = 0;
 
-    while(aString[ind] != "\0"){
+    while(aString[ind] != '\0'){
+        printf("%c", aString[ind]);
         ind++;
     }
     
@@ -30,5 +31,7 @@ char* userInputWithSpaces(){
     // Let's say 256 is the maximum amount of characters you can enter.
     fgets(breed, 256, stdin);
 
-    printf("Your cat is a %s", breed);
+    printf("Your cat is a %s\n", breed);
+
+    return breed;
 }

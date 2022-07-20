@@ -1,7 +1,6 @@
 #include "./Function_Examples.h"
 
-// What is a factorial? Well, some of you may
-// have seen a 
+// What is a factorial?
 int factorialExample(int num){
     if(num < 0){
         // cannot take the factorial of a negative number
