@@ -21,5 +21,15 @@
 */
 
 int main(){
+    displayIntro();
+    displayRules();
+
+    struct CharacterData player = makeCharacter();
+    printf("Your name is: %s", player.name);
+
+    struct Dungeon ourDungeon = createDungeon();
+
+    generateMobLocation(&ourDungeon);
+
     return 0;
 }
