@@ -1,4 +1,5 @@
-#include "Recursive_Struct.h"
+#include "./Recursive_Struct.h"
+#include "./File_Reading.h"
 
 int main(){
     struct Tree* tree = makeTree(5);
@@ -8,6 +9,8 @@ int main(){
     insertLeaf(tree, 8); 
 
     printTree("", tree, 0);
+
+    readFile();
 
     return 0;
 }

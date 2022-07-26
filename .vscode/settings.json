@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "game_commands.h": "c",
-        "recursive_struct.h": "c"
+        "recursive_struct.h": "c",
+        "file_reading.h": "c"
     },
     "C_Cpp.dimInactiveRegions": false
 }
