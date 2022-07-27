@@ -7,10 +7,10 @@ int main(){
     insertLeaf(tree, 4);
     insertLeaf(tree, 9);
     insertLeaf(tree, 8); 
+    readFile(tree);
 
     printTree("", tree, 0);
 
-    readFile();
 
     return 0;
 }

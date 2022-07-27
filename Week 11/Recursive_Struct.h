@@ -5,7 +5,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 // Here we can find an example of a struct defined recursively
 // I do not expect you all to be able to create something like this
 // at your level. Rather, I want you to be aware of things
