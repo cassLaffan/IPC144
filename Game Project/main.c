@@ -18,6 +18,7 @@
 * 4 - The player can run or hit the monster with their sword.
 * BONUS - The player can gain XP and level up
 * BONUS - Once the player is level 10, they encounter a boss
+* BONUS - The player can "save" their game to a .txt
 */
 
 int main(){
