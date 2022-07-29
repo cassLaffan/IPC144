@@ -28,9 +28,15 @@ int main(){
     struct CharacterData player = makeCharacter();
     printf("Your name is: %s", player.name);
 
-    struct Dungeon ourDungeon = createDungeon();
+    struct Dungeon ourDungeon = createDungeon(&player);
 
     generateMobLocation(&ourDungeon);
 
+    while(ourDungeon.player->health > 0){
+        move(&ourDungeon);
+        printDungeon(&ourDungeon);
+    }
+
+    printf("You died :(\n");
     return 0;
 }

@@ -1,7 +1,8 @@
 #include "./Game_Commands.h"
 
-struct Dungeon createDungeon(){
+struct Dungeon createDungeon(struct CharacterData* player){
     struct Dungeon newDungeon;
+    newDungeon.player = player;
     for(int i = 0; i < 4; i++){
         for(int j = 0; j < 16; j++){
             newDungeon.map[i][j] = 0;
@@ -49,23 +50,73 @@ void move(struct Dungeon* aDungeon){
     scanf("%c", &direction);
     aDungeon->map[aDungeon->playerRow][aDungeon->playerCol] = 0;
 
+    int row = aDungeon->playerRow;
+    int col = aDungeon->playerCol;
+
     switch (direction){
         case 'w':
-            aDungeon->playerRow--;
+            row--;
+            break;
         case 'a':
-            aDungeon->playerCol--;
+            col--;
+            break;
         case 's':
-            aDungeon->playerRow++;
+            row++;
+            break;
         case 'd':
-            aDungeon->playerCol++;
+            col++;
+            break;
         default:
             printf("Incorrect input!!\n");
-    }
+    }   
 
-    // TODO: Check if player ends up on monster, initialize battle if so
-    // TODO: update coordinates correctly
-    // TODO: Loop for movements
+    while(getchar() != '\n'){}
+
+    if(aDungeon->map[row][col]){
+        battle(aDungeon, aDungeon->map[aDungeon->playerRow][aDungeon->playerCol]);
+    }
+    else{
+        aDungeon->playerRow = row;
+        aDungeon->playerCol = col;
+        aDungeon->map[aDungeon->playerRow][aDungeon->playerCol] = 1;
+    }
 
 }
 
-void battle(struct Dungeon* aDungeon, struct CharacterData* player);
+void battle(struct Dungeon* aDungeon, int monster){
+    // add run option
+    printf("You have encountered a ");
+
+    switch(monster){
+        case 2:
+            printf("imp!\n");
+            break;
+        case 3:
+            printf("goblin!\n");
+            break;
+        case 4:
+            printf("troll!\n");
+            break;
+        default:
+            break;
+    }
+
+    printf("Pick an action: Run (r), Attack (a), Give Up (g): ");
+    char action;
+    scanf("%c", &action);
+
+    switch(action){
+        case 'a':
+            break;
+        case 'r':
+            //move(aDungeon);
+            break;
+        case 'g':
+            aDungeon->player->health = 0;
+            break;
+        default:
+            printf("Bad input! Hurry and pick an action!\n");
+    }
+
+    while(getchar() != '\n'){}
+}

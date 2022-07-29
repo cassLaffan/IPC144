@@ -4,6 +4,10 @@
 #include <stdio.h>
 #include "./Game_Instructions.h"
 
+#define IMP 2
+#define GOBLIN 3
+#define TROLL 4
+
 // Imp = 2, Goblin = 3, Troll = 4
 /*
 * 0004000000000002
@@ -15,9 +19,10 @@ struct Dungeon{
     int map[4][16];
     int playerRow;
     int playerCol;
+    struct CharacterData* player;
 };
 
-struct Dungeon createDungeon();
+struct Dungeon createDungeon(struct CharacterData* player);
 
 void printDungeon(struct Dungeon* aDungeon);
 
@@ -34,6 +39,6 @@ void move(struct Dungeon* aDungeon);
 /*
 * Battle function!
 */
-void battle(struct Dungeon* aDungeon, struct CharacterData* player);
+void battle(struct Dungeon* aDungeon, int monster);
 
 #endif
