@@ -4,12 +4,14 @@
 // This file and the accompanying C file will
 // have several issues with it. Let's find them all!
 
-integer fizzBuzz();
+#include <stdio.h>
 
-bool isTrue(int);
+void fizzBuzz(int);
 
-int makeString(){
-    return 1;
-}
+int isTrue();
+
+void aLoop();
+
+char* makeString();
 
 #endif

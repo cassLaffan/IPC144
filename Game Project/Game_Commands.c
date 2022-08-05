@@ -26,13 +26,15 @@ void generateMobLocation(struct Dungeon* aDungeon){
     int row;
     int column;
     int monster;
+    srand(SEED);
 
+    // 10 is the number of monsters
     for(int i = 0; i <= 9; i++){
         row = rand() % 4;
         column = rand() % 15;
         monster = (rand() % 3) + 2;
-
-        aDungeon->map[row][column] = monster;
+        //assigns monster to place on map   
+        aDungeon->map[row][column] = monster; 
     }
 
     aDungeon->map[3][15] = 1;
@@ -73,7 +75,12 @@ void move(struct Dungeon* aDungeon){
     while(getchar() != '\n'){}
 
     if(aDungeon->map[row][col]){
-        battle(aDungeon, aDungeon->map[aDungeon->playerRow][aDungeon->playerCol]);
+        int win = battle(aDungeon, aDungeon->map[row][col]);
+        if(win == 1){
+            aDungeon->playerRow = row;
+            aDungeon->playerCol = col;
+            aDungeon->map[aDungeon->playerRow][aDungeon->playerCol] = 1;
+        }
     }
     else{
         aDungeon->playerRow = row;
@@ -83,19 +90,19 @@ void move(struct Dungeon* aDungeon){
 
 }
 
-void battle(struct Dungeon* aDungeon, int monster){
+int battle(struct Dungeon* aDungeon, int monster){
     // add run option
-    printf("You have encountered a ");
+    printf("You have encountered a");
 
     switch(monster){
         case 2:
-            printf("imp!\n");
+            printf("n imp!\n");
             break;
         case 3:
-            printf("goblin!\n");
+            printf(" goblin!\n");
             break;
         case 4:
-            printf("troll!\n");
+            printf(" troll!\n");
             break;
         default:
             break;
@@ -103,15 +110,19 @@ void battle(struct Dungeon* aDungeon, int monster){
 
     printf("Pick an action: Run (r), Attack (a), Give Up (g): ");
     char action;
+    int result;
     scanf("%c", &action);
 
     switch(action){
         case 'a':
+            result = attack(aDungeon->player, monster);
             break;
         case 'r':
+            result = 2;
             //move(aDungeon);
             break;
         case 'g':
+            result = -1;
             aDungeon->player->health = 0;
             break;
         default:
@@ -119,4 +130,48 @@ void battle(struct Dungeon* aDungeon, int monster){
     }
 
     while(getchar() != '\n'){}
+    return result;
+}
+
+int attack(struct CharacterData* player, int monster){
+
+    int monsterHealth = monster * 3;
+    int randomDamage;
+    int playerDamage;
+    int result = -1;
+    char action;
+    srand(SEED);
+    while(monsterHealth > 0 && player->health > 0){
+        while(getchar() != '\n'){}
+        printf("Your health: %d\n", player->health);
+        printf("You have to fight the monster! Press 'a' to attack or press 'r' to run. ");
+        scanf("%c", &action);
+
+        if(action == 'r'){
+            printf("Running reduces your health by 1!\n");
+            player->health--;
+            break;
+        }
+
+        playerDamage = rand() % 4;
+
+        printf("You hit the monster for %d damange!\n", playerDamage);
+
+        monsterHealth -= playerDamage;
+
+
+        if(monsterHealth > 0){
+            printf("The monster now has %d health!\n", monsterHealth);
+            randomDamage = rand() % monster;
+            player->health -= randomDamage;
+            printf("The monster hits you for %d damage!\n", randomDamage);
+        }
+        else{
+            printf("You won the battle!\n");
+        }
+    }
+
+    // Return whether or not the player has won the fight
+    return player->health <= 0 ? -1 : 1;
+
 }

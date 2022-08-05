@@ -8,6 +8,8 @@
 #define GOBLIN 3
 #define TROLL 4
 
+#define SEED 100
+
 // Imp = 2, Goblin = 3, Troll = 4
 /*
 * 0004000000000002
@@ -39,6 +41,12 @@ void move(struct Dungeon* aDungeon);
 /*
 * Battle function!
 */
-void battle(struct Dungeon* aDungeon, int monster);
+int battle(struct Dungeon* aDungeon, int monster);
+
+/*
+* An attack function!
+*/
+
+int attack(struct CharacterData* player, int monster);
 
 #endif

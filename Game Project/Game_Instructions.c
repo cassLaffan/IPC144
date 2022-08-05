@@ -17,6 +17,6 @@ struct CharacterData makeCharacter(){
     printf("What is your name? ");
     char* characterName = malloc(sizeof(char*));
     fgets(characterName, 256, stdin);
-    struct CharacterData player = {characterName, 0, 100};
+    struct CharacterData player = {characterName, 0, 10};
     return player;
 }
