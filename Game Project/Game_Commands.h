@@ -4,10 +4,6 @@
 #include <stdio.h>
 #include "./Game_Instructions.h"
 
-#define IMP 2
-#define GOBLIN 3
-#define TROLL 4
-
 #define SEED 100
 
 // Imp = 2, Goblin = 3, Troll = 4
