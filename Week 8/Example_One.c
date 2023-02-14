@@ -29,5 +29,5 @@ int main(){
     cowGoesMoo(firstCow);
     cowGoesMoo(secondCow);
 
-    return(0);
+    return 0;
 }

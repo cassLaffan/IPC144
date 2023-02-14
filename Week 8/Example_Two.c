@@ -19,5 +19,5 @@ int main(){
         printf("%c", example[i]);
     }
 
-    return(0);
+    return 0;
 }
