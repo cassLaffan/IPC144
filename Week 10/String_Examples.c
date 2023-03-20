@@ -24,7 +24,7 @@ char* userInputWithSpaces(){
     // There is a function you may not have been aware of
     // which is safer to use than scanf. It's called fgets.
     // You allocate your character pointer as you always would.
-    char *breed = malloc(sizeof(char*));
+    char* breed = malloc(sizeof(char*));
 
     printf("What breed is your cat? ");
 
