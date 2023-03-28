@@ -3,9 +3,6 @@
 struct Tree* makeTree(int root) {
     struct Tree* newTree = malloc(sizeof(struct Tree));
     newTree->value = root;
-    // Oh ho, what have we got here?
-    // NULL is essentially you telling the compiler,
-    // "Hey, I'm gonna put something here eventually but right now, it's empty (sorta)."
     newTree->leftChild = NULL;
     newTree->rightChild = NULL;
     return newTree;
