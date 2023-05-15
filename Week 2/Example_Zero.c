@@ -32,7 +32,7 @@ int main(void){
     // This is a double! Both doubles and floats represent irrational (funky,
     // decimale numbers). However, doubles are 8 bytes (64 bits) and floats
     // are 4 bytes (32 bits).
-    float biggerDecimalNumber = 1.1;
+    double biggerDecimalNumber = 1.1;
 
     // You're probably wondering that the \n is after the formatting operator!
     // That's called the newline character. A character is anything the computer
