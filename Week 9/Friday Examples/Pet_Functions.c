@@ -2,9 +2,9 @@
 
 struct Pet createPet(char* n, char* s, char* b, int a, float w, int adoptable, int adopted){
     struct Pet newPet;
-    newPet.name = n;
-    newPet.species = s;
-    newPet.breed = b;
+    strcpy(newPet.name, n);
+    strcpy(newPet.species, s);
+    strcpy(newPet.breed, b);
     newPet.age = a;
     newPet.weight = w;
     newPet.isAdoptable = adoptable;
@@ -22,13 +22,13 @@ void setAsAdopted(struct Pet* pet){
 
 struct Pet getPetData(){
     printf("Please enter the following information:\n");
-    char* name = malloc(sizeof(char*));
+    char name[40];
     printf("Pet name: ");
     scanf("\n%s", name);
-    char* species = malloc(sizeof(char*));
+    char species[40];
     printf("Pet species: ");
     scanf("\n%s", species);
-    char* breed = malloc(sizeof(char*));
+    char breed[40];
     printf("Breed: ");
     scanf("\n%s", breed);
     int age;

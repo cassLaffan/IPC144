@@ -5,10 +5,9 @@
 * to have /* followed by the following line somewhere later:
 */
 int main(){
-    // Here we declare (important word!) a variable
+    // Here, I do some basic arithmetic! You can do lots of math in C.
     int myExample = 5 + 10;
-    // Here we print off the variable. Note the two "arguments"
-    // I will be getting more into those next week
+    // I can print this, too!
     printf("%d\n", myExample);
 
     // In place incrementation! Adding ++ to the end of your variable
