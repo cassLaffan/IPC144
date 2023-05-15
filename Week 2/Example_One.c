@@ -15,5 +15,19 @@ int main(){
     myExample++;
     printf("%d", myExample);
 
+    // In place decrementation! Adding -- to the end of your variable
+    // Will decrement it by 1 in place!
+    myExample--;
+    printf("%d", myExample);
+
+    // Here we have an example of multiplication. A single * between
+    // numbers tells gcc that we are multiplying.
+    int secondExample = myExample * 2;
+    printf("%d", secondExample);
+
+    // Here, I have a new operation! This is division.
+    int thirdExample = myExample / secondExample;
+    printf("%d", secondExample);
+
     return 0;
 }
