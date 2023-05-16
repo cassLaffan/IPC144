@@ -6,7 +6,7 @@
 * which we call printf for short.
 */
 
-// You'll notice sometimes people will put a voice in here,
+// You'll notice sometimes people will put a void in here,
 // and other times, people leave it blank (like me!)
 // Some compilers get angry if you don't have the void, but
 // I usually leave it out.
