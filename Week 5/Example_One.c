@@ -1,38 +1,15 @@
 #include <stdio.h>
 
-// Let's look at a switch case!
-// Switch cases are spicy if statements that streamline if
-// statement logic.
-
-void conditionA(int i){
-    printf("%d is a good number.\n", i);
-}
-
-void conditionB(int i){
-    printf("%d is not between 1 and 3!\n", i);
-}
-
 int main(){
-    int i;
+    int len = 6;
 
-    do{
-        printf("Please input a number between 1 and 3. 0 is exit. \n");
+    // Here is a simple array of characters!
+    char example[] = {'H', 'e', 'l', 'l', 'o', '!'}; 
 
-        scanf("%d", &i);
-        switch(i){
-            case 0:
-                printf("Byebye~\n");
-                break;
-            case 1:
-            case 2:
-            case 3:
-                conditionA(i);
-                break;
-            default:
-                conditionB(i);
-        }
-        
-    }while(i);
+    // Here we iterate over the array and print out its contents.
+    for(int i = 0; i < len; i++){
+        printf("%c", example[i]);
+    }
 
     return 0;
 }
