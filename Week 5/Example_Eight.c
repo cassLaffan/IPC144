@@ -25,7 +25,8 @@ int main(){
     */
 
     // We can make this much denser by writing the ternary operator:
-
+    // The formatting is: condition ? value_if_true : value_if_false​
+    
     flag = (userInput < 1 || userInput > 5) ? -1 : 1;
 
     printf("Our flag has been set to: %d", flag);
