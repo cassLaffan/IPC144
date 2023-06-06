@@ -1,13 +1,34 @@
 #include <stdio.h>
 
+/*
+* This is a file that just shows how you might use ternary operators!
+*/
+
 int main(){
 
-    // Here we have an explicit declaration of an array and its length.
-    int exampleNums[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    int userInput, flag;
 
-    for(int i = 0; i < 9; i++){
-        printf("This is the value at index %d: %d\n", i, exampleNums[i]);
+    printf("Enter a number between 1 and 5: ");
+    scanf("%d", &userInput);
+
+    // If we wanted to check whether our user's input met the
+    // conditions we gave them above, you'd write out a lengthy
+    // if statement, like so:
+
+    /*
+    if(userInput < 1 || userInput > 5){
+        flag = -1; // setting to an invalid number to reset
     }
+    else{
+        flag = 1; // user input is good
+    }
+    */
+
+    // We can make this much denser by writing the ternary operator:
+
+    flag = (userInput < 1 || userInput > 5) ? -1 : 1;
+
+    printf("Our flag has been set to: %d", flag);
 
     return 0;
 }

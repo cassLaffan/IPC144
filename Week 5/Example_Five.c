@@ -1,18 +1,12 @@
 #include <stdio.h>
 
-// Here we have a nested loop!
-// It's just a loop inside of a loop. Nothing spicy!
-
 int main(){
-    int len = 6;
-    char example[] = {'H', 'e', 'l', 'l', 'o', '!'}; 
-    char exampleTwo[] = {'W', 'o', 'r', 'l', 'd', '!'};
 
-    for(int i = 0; i < len; i++){
-        for(int j = 0; j < len; j++){
-            printf("%c", exampleTwo[j]);
-        }
-        printf("%c", example[i]);
+    // Here we have an explicit declaration of an array and its length.
+    int exampleNums[9] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+    for(int i = 0; i < 9; i++){
+        printf("This is the value at index %d: %d\n", i, exampleNums[i]);
     }
 
     return 0;
