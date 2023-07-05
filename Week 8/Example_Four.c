@@ -1,28 +1,52 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-/*This program will demonstrate the proper formatting for a small C program.*/
+/*
+* This file will take a close look at various input/output
+* related functions.
+*
+* An example of my own code using this kind of functionality
+* can be found here: 
+* https://github.com/cassLaffan/Minecraft_Pathfinding/blob/main/minecraft/suit/Utilities/UserInstructions.c
+*/
 
+// Let's exercise our use of structs!
+struct stringStruct{
+    char *stringEx;
+};
 
-// Notice how my functions are named well
-float multiplyByFloat(int exampleArgument){
-    float ret = 5.2 * exampleArgument;
-    return ret;
-}
-
-// You know exactly what they're supposed to be doing by just reading their names
-// Notice how this function has two arguments?
-int multiplyByInt(int exampleArgument, float secondExampleArgument){
-    int ret = 5 * exampleArgument * secondExampleArgument;
-    return ret;
-}
-
+// Something weird happens in this code!
+// Can you pinpoint the problem and fix it?
 int main(){
-    float a = multiplyByFloat(3);
-    float b = multiplyByFloat(4);
 
-    int c = multiplyByInt(3, 3.3);
-    int d = multiplyByInt(4, 3.1);
 
-    printf("%f %f %d %d", a, b, c, d);
+    char* input = malloc(sizeof(char*));
+    printf("Let's get a string from our user!\n");
+    scanf("%s", input);
+
+    // Let's play with character pointers!
+    printf("What does the string look like if we just print out the pointer? %s\n", input);
+
+    // What happens if we use %p? We get the raw address!
+    printf("'Our third C string is: %p\n", input);
+
+    // Let's fiddle with a more classic c string
+    char classicExample[10];
+
+    // Oh ho! What is happening here? What does this 19 do?
+    // Notice how we still don't need the &?
+    scanf("%10s", classicExample);
+
+    printf("Our second user input is: %s\n", classicExample);
+
+    // We can also slice strings
+    printf("The fourth character in exampleOne is: %c\n", classicExample[0]);
+
+    // Finally, we can make a simple struct and see how adding a string works
+    struct stringStruct exampleStruct;
+    exampleStruct.stringEx = "This is our struct string!\0";
+
+    printf("Our final string is: %s\n", exampleStruct.stringEx);
+
     return 0;
 }

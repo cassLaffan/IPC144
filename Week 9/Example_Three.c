@@ -1,23 +1,33 @@
 #include <stdio.h>
 
 /*
-* Here I have another example of what a character string
-* might look like. Notice how it's an array of characters?
-* Character strings! Wooo!
-* I actually posted this code last week, but as an example
-* for arrays. There is a lot of overlap between concepts!
+* Let's take a look at pointers and references. These two datatypes are 
+* different but overlap and are often confusing for students.
 */
 
-int main(){
-    int len = 6;
-    
-    char example[] = {'H', 'e', 'l', 'l', 'o', '!'}; 
+void conditionA(int* i){
+    printf("%d is a good number.\n", i);
+}
 
-    // Notice again that while the length of the character
-    // array is 6, we start indexing at 0 and end at i < length.
-    for(int i = 0; i < len; i++){
-        printf("%c", example[i]);
+void conditionB(int* i){
+    printf("%d is not between 1 and 3!\n", i);
+}
+
+int main(){
+    int i;
+
+    printf("Please input a number between 1 and 3.\n");
+    scanf("%d", &i);
+
+    switch(i){
+        case 1:
+        case 2:
+        case 3:
+            conditionA(&i);
+            break;
+        default:
+            conditionB(&i);
     }
 
-    return(0);
+    return 0;
 }
