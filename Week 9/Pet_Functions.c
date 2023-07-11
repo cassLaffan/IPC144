@@ -1,4 +1,4 @@
-#include "./Header_Example.h"
+#include "./Pet_Functions.h"
 
 struct Pet createPet(char* n, char* s, char* b, int a, float w, int adoptable, int adopted){
     struct Pet newPet;
@@ -12,6 +12,8 @@ struct Pet createPet(char* n, char* s, char* b, int a, float w, int adoptable, i
     return newPet;
 }
 
+// Don't worry much about the -> notation this week. I'll talk about it next week
+// Sneak peak: it replaces the . when accessing the innards of a struct, if it's a pointer
 void setAsAdoptable(struct Pet* pet){
     pet->isAdoptable = 1;
 }
