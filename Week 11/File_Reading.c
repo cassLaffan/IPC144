@@ -12,7 +12,7 @@ void readFile(struct Tree* tree){
     // !NULL == true
     if(!fp){
         printf("It's file broken day, my dudes. %s \n", filename);
-        return 1;
+        return;
     }
 
     int entry;

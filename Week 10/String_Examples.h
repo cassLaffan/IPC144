@@ -5,6 +5,8 @@
 #include <string.h>
 #include <stdlib.h>
 
+#define STR_SIZE 50
+
 /*
 * This week's examples will all be declared in various
 * header files. This file, for example, will be for string

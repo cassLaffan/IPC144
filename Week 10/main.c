@@ -1,13 +1,7 @@
 #include "./String_Examples.h"
-#include "./Function_Examples.h"
+
 
 int main(){
-    // Let's call some functions!
-    // First, factorial
-    printf("5! = %d\n", factorialExample(5));
-    printf("10! = %d\n", factorialExample(10));
-    printf("-1! will give us %d\n", factorialExample(-1));
-
     int numArray[] = {4, 5, 1, 6, 7, 88, 92, 1999, -19};
     sortNumberList(numArray, 9);
     printf("{");
@@ -25,7 +19,9 @@ int main(){
     printf("Since -5 does not exist in the above array, we get: %d\n", searchForIndex(numArray, -5, 9));
 
     printf("Type in a string! ");
+    
     char* inputOne = userInputWithSpaces();
+
     printf("The string length for the cat breed is: %d\n", findStringLength(inputOne));
     char* inputTwo = userInputWithSpaces();
     printf("The difference between the two string is: %d", areStringsTheSame(inputOne, inputTwo));
