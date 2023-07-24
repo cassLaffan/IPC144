@@ -2,9 +2,8 @@
 #define FILE_READING_H
 
 #include <stdio.h>
+#include "./Recursive_Struct.h"
 
-#define MAX 100
-
-void readFile(int array[MAX]);
+void readFile(struct Tree*);
 
 #endif

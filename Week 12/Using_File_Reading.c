@@ -1,6 +1,6 @@
-#include "./File_Reading.h"
+#include "./Using_File_Reading.h"
 
-void readFile(int array[MAX]){
+void readFile(struct Tree* tree){
 
     FILE *fp;
     char* filename = "ints.txt"; 
@@ -12,14 +12,14 @@ void readFile(int array[MAX]){
     // !NULL == true
     if(!fp){
         printf("It's file broken day, my dudes. %s \n", filename);
-        return; //This exits a void function early! No return value!
+        return;
     }
 
-    int iter = 0;
-    // While we're not at the end of file (eof)
+    int entry;
+
     while (!feof(fp)){
-        fscanf(fp, "%d", &array[iter]);
-        iter++;
+        fscanf(fp, "%d", &entry);
+        insertLeaf(tree, entry);
     }
 
     //remember to always close your files after you're done reading them

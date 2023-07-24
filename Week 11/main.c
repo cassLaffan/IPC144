@@ -1,11 +1,17 @@
-#include "./Function_Examples.h"
+#include "./File_Reading.h"
 
 int main(){
-    // Let's call some functions!
-    // First, factorial
-    printf("5! = %d\n", factorialExample(5));
-    printf("10! = %d\n", factorialExample(10));
-    printf("-1! will give us %d\n", factorialExample(-1));
+    // Now let's create an array here that we can store
+    // the file's ints in
+
+    // Remember! Arrays are just pointers
+    int arr[MAX];
+
+    readFile(arr);
+
+    for(int i = 0; i < MAX; i++){
+        printf("The int on line %d is %d\n", i, arr[i]);
+    }
 
     return 0;
 
